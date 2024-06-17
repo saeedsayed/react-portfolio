@@ -1,0 +1,223 @@
+/* =======
+  tailwind setup
+========== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* ==========
+  google font Roboto weight 100 300 400 500 700 900
+ ========== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+
+/* @layer components {
+  .animate-fade-in {
+    animation: 1s ease-in-out;
+    -webkit-animation: 1s ease-in-out;
+    animation-timeline: view();
+    animation-range: entry;
+  }
+  .animate-fade-in {
+    animation-name: a;
+  }
+}
+@keyframes a {
+  from {
+
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+  }
+  to {
+
+    filter: blur(0);
+    -webkit-filter: blur(0);
+  }
+} */
+
+/* =========
+  
+============ */
+:root {
+  --primary-color: #f1f1f1;
+  --secondary-color: #ffffff;
+  --font-color: #3b0665;
+  --font-sub-color: #651e9f;
+  --bg-nav: #ffffff;
+  --border-color: #3f3f4666;
+  --hover-color: #2b7af2;
+  --facebook-color: #1877f2;
+  --instagram-color: #fd1d1d;
+  --github-color: #4078c0;
+  --linkedin-color: #0077b5;
+  --whatsapp-color: #25d366;
+  --telegram-color: #0088cc;
+}
+/* ========
+  styling dark mode
+=========== */
+.dark {
+  --primary-color: #000000;
+  --secondary-color: #18181b;
+  --font-color: #f4f4f5;
+  --font-sub-color: #a1a1aa;
+  --bg-nav: #27272a;
+  --border-color: #3f3f4666;
+  --hover-color: #2b7af2;
+  --github-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: background 0.77s;
+  -webkit-transition: background 0.77s;
+  -moz-transition: background 0.77s;
+  -ms-transition: background 0.77s;
+  -o-transition: background 0.77s;
+}
+html {
+  font-family: "Roboto", sans-serif;
+}
+:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+::-webkit-scrollbar {
+  width: 14px;
+  background-color: var(--secondary-color);
+  border-inline-start: 1px solid var(--font-sub-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--font-sub-color);
+}
+
+a,
+button {
+  cursor: pointer;
+}
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
+/* ==========
+  icon media color
+============= */
+
+.facebook-icon {
+  color: var(--facebook-color);
+}
+.instagram-icon {
+  color: var(--instagram-color);
+}
+.linkedin-icon {
+  color: var(--linkedin-color);
+}
+.github-icon {
+  color: var(--github-color);
+}
+.whatsapp-icon {
+  color: var(--whatsapp-color);
+}
+.telegram-icon {
+  color: var(--telegram-color);
+}
+/* =========
+  for verified icon in Hero component
+============ */
+.vf-bg {
+  z-index: 1;
+  position: relative;
+}
+.vf-bg:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  z-index: -1;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+/* ========
+  font for clock
+=========== */
+
+.clock-font{
+  font-family: "Black Ops One", system-ui;
+  font-weight: 500;
+}
+
+/*==========
+  loader component style & animation
+===========*/
+.loader {
+  height: 30px;
+  aspect-ratio: 2.5;
+  --_g: no-repeat radial-gradient(farthest-side, var(--font-color) 90%, #0000);
+  background: var(--_g), var(--_g), var(--_g), var(--_g);
+  background-size: 20% 50%;
+  animation: l43 1s infinite linear;
+}
+@keyframes l43 {
+  0% {
+    background-position: calc(0 * 100% / 3) 50%, calc(1 * 100% / 3) 50%,
+      calc(2 * 100% / 3) 50%, calc(3 * 100% / 3) 50%;
+  }
+  16.67% {
+    background-position: calc(0 * 100% / 3) 0, calc(1 * 100% / 3) 50%,
+      calc(2 * 100% / 3) 50%, calc(3 * 100% / 3) 50%;
+  }
+  33.33% {
+    background-position: calc(0 * 100% / 3) 100%, calc(1 * 100% / 3) 0,
+      calc(2 * 100% / 3) 50%, calc(3 * 100% / 3) 50%;
+  }
+  50% {
+    background-position: calc(0 * 100% / 3) 50%, calc(1 * 100% / 3) 100%,
+      calc(2 * 100% / 3) 0, calc(3 * 100% / 3) 50%;
+  }
+  66.67% {
+    background-position: calc(0 * 100% / 3) 50%, calc(1 * 100% / 3) 50%,
+      calc(2 * 100% / 3) 100%, calc(3 * 100% / 3) 0;
+  }
+  83.33% {
+    background-position: calc(0 * 100% / 3) 50%, calc(1 * 100% / 3) 50%,
+      calc(2 * 100% / 3) 50%, calc(3 * 100% / 3) 100%;
+  }
+  100% {
+    background-position: calc(0 * 100% / 3) 50%, calc(1 * 100% / 3) 50%,
+      calc(2 * 100% / 3) 50%, calc(3 * 100% / 3) 50%;
+  }
+}
+
+/*========
+    Scrollbar fro project card details
+  ========== */
+.scroll-bar-slim::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* =========
+  for remove nav on mobile display
+============*/
+
+.remove-nav {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0s 0.7s;
+  -webkit-transition: all 0s 0.7s;
+  -moz-transition: all 0s 0.7s;
+  -ms-transition: all 0s 0.7s;
+  -o-transition: all 0s 0.7s;
+}
