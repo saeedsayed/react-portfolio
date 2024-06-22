@@ -2,7 +2,7 @@
 import {
   Header,
   Hero,
-  Main,
+  Projects,
   Contact,
   Footer,
   ToTop,
@@ -20,7 +20,7 @@ const App = () => {
         <div className="border-t border-border-color -mx-4 sm:-mx-8 my-12 lg:-mx-14" />
         <Skills />
         <div className="border-t border-border-color -mx-4 sm:-mx-8 my-12 lg:-mx-14" />
-        <Main />
+        <Projects />
         <div className="border-t border-border-color -mx-4 sm:-mx-8 my-12 lg:-mx-14" />
         <Resume />
         <div className="border-t border-border-color -mx-4 sm:-mx-8 my-12 lg:-mx-14" />

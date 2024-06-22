@@ -9,7 +9,7 @@ import { FaGoogleDrive } from "react-icons/fa6";
 
 const Resume = () => {
   const [downPdfNote, setDownPdfNote] = useState(false);
-  const [downImgNote, setDownImgNote] = useState(false);
+  // const [downImgNote, setDownImgNote] = useState(false);
   return (
     <div id="resume">
       <SectionTitle>My resume</SectionTitle>
@@ -26,13 +26,11 @@ const Resume = () => {
           =============== */}
           <a
             href={resumePdf}
-            download="saeed-cv"
+            download="Saeed-frontend-cv"
             className="text-sm md:text-md lg:text-lg md:order-"
             onClick={() => setDownPdfNote(true)}
           >
-            <MainBtn>
-              download Resume as PDF ( Recommended )
-            </MainBtn>
+            <MainBtn>Click here to download Resume as PDF</MainBtn>
           </a>
           {/* ======= download note 👇 ======= */}
           {downPdfNote && (
@@ -40,7 +38,7 @@ const Resume = () => {
               if the download doesn't start within a minute, you can download it
               directly from{" "}
               <a
-                href="https://drive.google.com/file/d/1N6VsHoWwgnD_pFF3hzAcdCz3KzzjrBSM/view?usp=sharing"
+                href="https://drive.google.com/file/d/1ujH16EfTnt5i3eW8hp0HWl5FglQXB2HF/view?usp=sharing"
                 target="_blank"
                 className="text-blue-600 underline"
               >
@@ -51,18 +49,18 @@ const Resume = () => {
           {/* ===========
             download resume image button  👇
           =============== */}
-          <a
+          {/* <a
             href={resumeImage}
-            download="saeed-cv"
+            download="saeed-frontend-cv"
             className="text-sm md:text-md lg:text-lg md:order-"
             onClick={() => setDownImgNote(true)}
           >
             <MainBtn >
               download Resume as Image/JPG
             </MainBtn>
-          </a>
+          </a> */}
           {/* ======= download note 👇 ======= */}
-          {downImgNote && (
+          {/* {downImgNote && (
             <p className="border-dashed border p-2 rounded-lg text-sm md:text-md">
               if the download doesn't start within a minute, you can download it
               directly from{" "}
@@ -74,7 +72,7 @@ const Resume = () => {
                 google drive <FaGoogleDrive className="inline" />
               </a>
             </p>
-          )}
+          )} */}
         </div>
         {/* ==========
           resume image  👇

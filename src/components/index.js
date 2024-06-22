@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Hero from "./Hero";
 import Skills from "./Skills";
-import Main from "./Main";
+import Projects from "./Projects";
 import Resume from "./Resume";
 import Contact from "./Contact";
 import Footer from "./footer";
@@ -16,7 +16,7 @@ export {
   Header,
   Skills,
   Hero,
-  Main,
+  Projects,
   Resume,
   Contact,
   Footer,
