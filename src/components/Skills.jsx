@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import SectionTitle from "./SectionTitle";
 import { skills } from "./index";
 import { motion } from "framer-motion";
+import { useMainContext } from "../context/MainContext";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -18,11 +19,13 @@ const fadeInAnimationVariants = {
 };
 
 const Skills = () => {
+  const { skillsData, loading } = useMainContext();
+  if (loading) return <div className="min-h-96 flex justify-center items-center"><div className="loader" /></div>
   return (
     <div id="skills">
       <SectionTitle>Skills</SectionTitle>
       <div className="flex gap-1 gap-y-4 flex-wrap justify-between">
-        {skills.map((skill, index) => (
+        {Object.entries(skillsData)?.map(([skillName, { icon }], index) => (
           <motion.div
             initial="initial"
             whileInView="animate"
@@ -30,14 +33,15 @@ const Skills = () => {
             variants={fadeInAnimationVariants}
             custom={index}
             key={crypto.randomUUID()}
-            title={skill.name}
+            title={skillName}
             className="flex flex-col  justify-center items-center w-40 h-40 rounded-lg text-center bg-gray-500"
           >
-            <skill.icon
+            <img src={icon} alt={skillName} className="w-14" />
+            {/* <skill.icon
               style={{ color: skill.iconColor }}
               className="text-6xl"
-            />
-            <p className="text-2xl w-full px-2">{skill.name}</p>
+            /> */}
+            <p className="text-2xl w-full px-2">{skillName}</p>
           </motion.div>
         ))}
       </div>

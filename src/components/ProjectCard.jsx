@@ -21,7 +21,7 @@ const ProjectCard = ({ project }) => {
         card image 👇
       ============*/}
       <div
-        style={{ backgroundImage: `url("${project.thumbnails}")` }}
+        style={{ backgroundImage: `url("${project.image}")` }}
         className="aspect-video bg-cover bg-center rounded-md"
       />
       {/* ===========
@@ -31,9 +31,9 @@ const ProjectCard = ({ project }) => {
         <div className="h-36 overflow-auto scroll-bar-slim  transition-all">
           <h3 className="text-xl">{project.name}</h3>
           <h3 className="text-lg my-1">technologies:</h3>
-          {project.descrption}
+          {/* {project.descrption} */}
           <ul className="ps-5">
-            {project.technologies.map((tech, i) => (
+            {project.techStack.map((tech, i) => (
               <li key={i} className="flex items-center gap-3">
                 - {tech}
                 {tech == "HTML5" && <FaHtml5 className="text-orange-600" />}
@@ -68,14 +68,14 @@ const ProjectCard = ({ project }) => {
           <a
             className="w-1/2 hover:w-full flex justify-center items-center text-2xl bg-[var(--hover-color)] py-3 hover:opacity-80 transition-all duration-300"
             target="_plank"
-            href={project.repo}
+            href={project.repository}
           >
             <FaGithub />
           </a>
           <a
             className="w-1/2 hover:w-full flex justify-center items-center text-2xl bg-[var(--hover-color)] py-3 hover:opacity-80 transition-all duration-300"
             target="_plank"
-            href={project.url}
+            href={project.link}
           >
             <FaLink />
           </a>
