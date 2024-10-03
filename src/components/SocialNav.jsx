@@ -9,11 +9,17 @@ const SocialNav = () => {
         return (
           <li key={i} className="relative">
             <a href={value.URL} target="_blank" title={key}>
-              <img src={value.icon} alt={key}
-              className={`w-12 aspect-square transition rounded-full border-2 border-white shadow-lg`}
+              <img
+                src={value.icon}
+                alt={key}
+                loading="lazy"
+                className={`w-12 aspect-square transition rounded-full border-2 border-white shadow-lg`}
               />
-              <img src={value.icon} alt={key}
-              className={`w-12 aspect-square absolute rounded-full top-0 transition border-2 border-white hover:animate-ping`}
+              <img
+                src={value.icon}
+                alt={key}
+                loading="lazy"
+                className={`w-12 aspect-square absolute rounded-full top-0 transition border-2 border-white hover:animate-ping`}
               />
             </a>
           </li>

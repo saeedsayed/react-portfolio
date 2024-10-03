@@ -5,8 +5,8 @@ import Lottie from "lottie-react";
 import { useMainContext } from "../context/MainContext";
 
 const Hero = () => {
-  const { aboutData, loadings } = useMainContext();
-  if (loadings)
+  const { aboutData, loading } = useMainContext();
+  if (loading)
     return (
       <div className="flex items-center justify-center h-96">
         <div className="loader" />

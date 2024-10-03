@@ -26,7 +26,6 @@ const projects = () => {
       spaceBetween: 30,
     },
   };
-  // }, []);
   // ==========
   // loading 👇
   //===========

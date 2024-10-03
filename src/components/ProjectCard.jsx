@@ -1,22 +1,8 @@
 import React from "react";
-import {
-  FaHtml5,
-  FaCss3,
-  FaBootstrap,
-  FaJs,
-  FaReact,
-  FaLink,
-  FaGithub,
-} from "react-icons/fa6";
-import { SiAxios, SiTailwindcss } from "react-icons/si";
-import { CiMobile3 } from "react-icons/ci";
-import { TbBrandRedux, TbCloudDataConnection } from "react-icons/tb";
-
+import { FaLink, FaGithub } from "react-icons/fa6";
 const ProjectCard = ({ project }) => {
   return (
-    <div
-      className="border border-hover-color rounded-lg overflow-hidden flex flex-col shadow-lg select-none"
-    >
+    <div className="border border-hover-color rounded-lg overflow-hidden flex flex-col shadow-lg select-none">
       {/*==========
         card image 👇
       ============*/}
@@ -36,30 +22,6 @@ const ProjectCard = ({ project }) => {
             {project.techStack.map((tech, i) => (
               <li key={i} className="flex items-center gap-3">
                 - {tech}
-                {tech == "HTML5" && <FaHtml5 className="text-orange-600" />}
-                {tech == "CSS3" && <FaCss3 className="text-blue-600" />}
-                {tech == "Bootstrap" && (
-                  <FaBootstrap className="text-violet-600" />
-                )}
-                {tech == "JS" && <FaJs className="text-yellow-500" />}
-                {tech == "axios" && (
-                  <SiAxios className="text-blue-900 dark:text-white" />
-                )}
-                {tech == "responsive-design" && (
-                  <CiMobile3 className="text-blue-900 text-2xl dark:text-white" />
-                )}
-                {tech == "ReactJS" && (
-                  <FaReact className="text-blue-900 text-2xl" />
-                )}
-                {tech == "Redux" && (
-                  <TbBrandRedux className="text-purple-700 text-2xl" />
-                )}
-                {tech == "Api" && (
-                  <TbCloudDataConnection className="text-gray-700 dark:text-white text-2xl" />
-                )}
-                {tech == "Tailwind" && (
-                  <SiTailwindcss className="text-blue-500 text-2xl" />
-                )}
               </li>
             ))}
           </ul>
@@ -68,6 +30,7 @@ const ProjectCard = ({ project }) => {
           <a
             className="w-1/2 hover:w-full flex justify-center items-center text-2xl bg-[var(--hover-color)] py-3 hover:opacity-80 transition-all duration-300"
             target="_plank"
+            title="Repository"
             href={project.repository}
           >
             <FaGithub />
@@ -75,6 +38,7 @@ const ProjectCard = ({ project }) => {
           <a
             className="w-1/2 hover:w-full flex justify-center items-center text-2xl bg-[var(--hover-color)] py-3 hover:opacity-80 transition-all duration-300"
             target="_plank"
+            title="demo"
             href={project.link}
           >
             <FaLink />

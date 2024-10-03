@@ -27,6 +27,7 @@ const ToTop = () => {
             initial={{ x: 100 }}
             exit={{ x: 100 }}
             whileHover={{ scale: 1.1, y: -10 }}
+            title="go to top of page"
             className="bg-white w-8 md:w-14 opacity-40 hover:opacity-100 md:opacity-100 aspect-square rounded-full outline outline-offset-2
         transition-all hover:outline-hover-color"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

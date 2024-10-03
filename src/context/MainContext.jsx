@@ -6,39 +6,31 @@ const Context = createContext();
 
 const MainContext = ({ children }) => {
   const [aboutData, setAboutData] = useState();
-  const [loadings, setLoadings] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [skillsData, setSkillsData] = useState({});
   const [projectsData, setProjectsData] = useState([]);
   const [resumeData, setResumeData] = useState({});
   // get about data
   useEffect(() => {
     (async () => {
-      setLoadings(true);
+      setLoading(true);
       try {
         // get about data
         const aboutDocRef = doc(db, "about", "ukPeNNvcc4sJCTRhQn2j");
         const aboutDocSnap = await getDoc(aboutDocRef);
-        if (aboutDocSnap.exists()) {
-          setAboutData(aboutDocSnap.data());
-        }
+        setAboutData(aboutDocSnap.data());
         // get skills data
         const skillsDocRef = doc(db, "skills", "ZnfK0LOP3V3gnJqGO5EW");
         const skillDocSnap = await getDoc(skillsDocRef);
-        if (skillDocSnap.exists()) {
-          setSkillsData(skillDocSnap.data());
-        }
+        setSkillsData(skillDocSnap.data());
         // get project data
         const projectsDocRef = doc(db, "projects", "uQkGrHf56OKyx6d3tBks");
         const projectsDocSnap = await getDoc(projectsDocRef);
-        if (projectsDocSnap.exists()) {
-          setProjectsData(projectsDocSnap.data().projects);
-        }
+        setProjectsData(projectsDocSnap.data().projects);
         // get resume data
         const contactDocRef = doc(db, "resume", "by7FCFJCB1qCqMz1ppPO");
         const contactDocSnap = await getDoc(contactDocRef);
-        if (contactDocSnap.exists()) {
-          setResumeData(contactDocSnap.data());
-        }
+        setResumeData(contactDocSnap.data());
       } catch (e) {
         console.log("e: ", e);
         window.alert(
@@ -46,7 +38,7 @@ const MainContext = ({ children }) => {
         );
         window.location.replace("https://github.com/saeedsayed");
       } finally {
-        setLoadings(false);
+        setLoading(false);
       }
     })();
   }, []);
@@ -57,7 +49,7 @@ const MainContext = ({ children }) => {
         skillsData,
         projectsData,
         resumeData,
-        loadings,
+        loading,
       }}
     >
       {children}
