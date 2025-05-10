@@ -13,7 +13,7 @@ const Header = () => {
   // set clock
   // ========
   useEffect(() => {
-    let interval = setInterval((_) => {
+    let interval = setInterval(() => {
       let d = new Date();
       let h = d.getHours();
       let m = d.getMinutes();
@@ -47,7 +47,7 @@ const Header = () => {
   return (
     <header
       ref={header}
-      className={` sm:justify-center flex justify-between px-10 items-stretch pt-4 gap-5 transition-all duration-500 z-50 `}
+      className={`flex justify-evenly px-10d pt-4 gap-3 transition-all duration-500 z-50 `}
     >
       {/*============= 
         pc nav 👇
@@ -77,12 +77,14 @@ const Header = () => {
           !openNav && "remove-nav"
         } duration-1000 inset-0
         bg-slate-500 backdrop-blur-md bg-opacity-50 z-50`}
+        onClick={() => setOpenNav(false)}
       >
         <ul
           className={`bg-secondary-color w-10/12 m-auto relative mt-8
           pt-5 px-5 rounded-xl ${
             openNav ? "animate-openNav" : "animate-closeNav"
           }`}
+          onClick={(e) => e.stopPropagation()}
         >
           <button
             className="text-3xl absolute right-5 top-1 duration-500  hover:rotate-180"
@@ -109,9 +111,11 @@ const Header = () => {
         button show mobile nav  👇
       =============*/}
       <button
-        className="bg-bg-nav rounded-full  px-2 self-stretch text-2xl flex justify-center items-center border
+        className="bg-bg-nav rounded-full  px-2 self-stretchf text-2xl flex justify-center items-center border
         border-border-color sm:hidden active:scale-90 hover:border-hover-color transition-all"
         onClick={() => setOpenNav(true)}
+        title="open navigation"
+        name="open navigation"
       >
         <FaBars />
       </button>

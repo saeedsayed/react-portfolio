@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import SectionTitle from "./SectionTitle";
 import MainBtn from "./MainBtn";
 import resumeAnimation from "../assets/animation/resume.json";
@@ -7,19 +6,7 @@ import Lottie from "lottie-react";
 import { useMainContext } from "../context/MainContext";
 
 const Resume = () => {
-  const { resumeData, loading } = useMainContext();
-
-  if (loading) {
-    return (
-      <>
-        <SectionTitle>my projects</SectionTitle>
-        <div id="projects" className="flex justify-center pt-40 py-20">
-          <div className="loader" />
-        </div>
-      </>
-    );
-  }
-
+  const { resumeData } = useMainContext();
   return (
     <div id="resume" className="h-full">
       <SectionTitle>My resume</SectionTitle>
@@ -37,7 +24,7 @@ const Resume = () => {
           <a
             href={resumeData.pdf}
             target="_blank"
-            className="text-sm md:text-md lg:text-lg md:order-"
+            className="text-sm md:text-md lg:text-lg md:order-" rel="noreferrer"
           >
             <MainBtn>Click here to show my resume</MainBtn>
           </a>

@@ -5,24 +5,23 @@ import Lottie from "lottie-react";
 import { useMainContext } from "../context/MainContext";
 
 const Hero = () => {
-  const { aboutData, loading } = useMainContext();
-  if (loading)
-    return (
-      <div className="flex items-center justify-center h-96">
-        <div className="loader" />
-      </div>
-    );
+  const { aboutData } = useMainContext();
   return (
-    <div id="about" className="flex flex-col md:flex-row items-center">
+    <div id="about" className="flex flex-col md:flex-row items-center" rel="preload">
       {/* =======
         left section 👇
         =========== */}
       <div className="flex flex-col md:text-start text-center gap-6 md:w-3/5">
         <div className="flex gap-4 justify-center md:justify-start items-end">
-          <div
+          <img
+            className="w-52 h-52 bg-cover animate-morph bg-transparent outline outline-offset-4 outline-[var(--hover-color)] "
+            src={aboutData?.avatar}
+            alt="my avatar"
+          />
+          {/* <div
             className="w-52 h-52 bg-cover animate-morph bg-transparent outline outline-offset-4 outline-[var(--hover-color)] "
             style={{ backgroundImage: `url(${aboutData?.avatar})` }}
-          />
+          /> */}
           <div className="vf-bg">
             <MdVerified className="text-hover-color text-2xl" />
           </div>

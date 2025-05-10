@@ -2,13 +2,12 @@ import { useMainContext } from "../context/MainContext";
 
 const SocialNav = () => {
   const { aboutData } = useMainContext();
-  if (!aboutData) return;
   return (
     <ul className="flex justify-center gap-5 sm:gap-8 md:justify-start">
       {Object.entries(aboutData?.social)?.map(([key, value], i) => {
         return (
           <li key={i} className="relative">
-            <a href={value.URL} target="_blank" title={key}>
+            <a href={value.URL} target="_blank" title={key} rel="noreferrer">
               <img
                 src={value.icon}
                 alt={key}

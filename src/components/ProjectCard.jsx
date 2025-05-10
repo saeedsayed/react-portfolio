@@ -1,4 +1,3 @@
-import React from "react";
 import { FaLink, FaGithub } from "react-icons/fa6";
 const ProjectCard = ({ project }) => {
   return (
@@ -6,8 +5,10 @@ const ProjectCard = ({ project }) => {
       {/*==========
         card image 👇
       ============*/}
-      <div
-        style={{ backgroundImage: `url("${project.image}")` }}
+      <img
+        src={project.image}
+        alt={project.name}
+        loading="lazy"
         className="aspect-video bg-cover bg-center rounded-md"
       />
       {/* ===========

@@ -1,6 +1,4 @@
-import React, { useEffect, useRef } from "react";
 import SectionTitle from "./SectionTitle";
-import { skills } from "./index";
 import { motion } from "framer-motion";
 import { useMainContext } from "../context/MainContext";
 
@@ -19,13 +17,7 @@ const fadeInAnimationVariants = {
 };
 
 const Skills = () => {
-  const { skillsData, loading } = useMainContext();
-  if (loading)
-    return (
-      <div className="min-h-96 flex justify-center items-center">
-        <div className="loader" />
-      </div>
-    );
+  const { skillsData } = useMainContext();
   return (
     <div id="skills">
       <SectionTitle>Skills</SectionTitle>

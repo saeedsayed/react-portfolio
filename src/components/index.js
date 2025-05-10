@@ -9,7 +9,7 @@ import LightDarkM from "./LightDarkM";
 import ProjectCard from "./ProjectCard";
 import ToTop from './ToTop';
 import MainBtn from "./MainBtn";
-import { sections, socialMedia, apiProjects, skills } from "./staticContent";
+import { sections } from "./staticContent";
 
 
 export {
@@ -25,7 +25,4 @@ export {
   ToTop,
   MainBtn,
   sections,
-  socialMedia,
-  apiProjects,
-  skills,
 };

@@ -1,42 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"); */
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v32/KFOkCnqEu92Fr1MmgVxFIzIFKw.woff2)
+    format("woff2");
+}
+@font-face {
+  font-family: "Black Ops One";
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/blackopsone/v20/qWcsB6-ypo7xBdr6Xshe96H3aDbbtwkh.woff2)
+    format("woff2");
+}
 /* =======
   tailwind setup
 ========== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* ==========
-  google font Roboto weight 100 300 400 500 700 900
- ========== */
-
-
-/* @layer components {
-  .animate-fade-in {
-    animation: 1s ease-in-out;
-    -webkit-animation: 1s ease-in-out;
-    animation-timeline: view();
-    animation-range: entry;
-  }
-  .animate-fade-in {
-    animation-name: a;
-  }
-}
-@keyframes a {
-  from {
-
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-  }
-  to {
-
-    filter: blur(0);
-    -webkit-filter: blur(0);
-  }
-} */
-
-/* =========
-  
-============ */
 :root {
   --primary-color: #f1f1f1;
   --secondary-color: #ffffff;
@@ -71,13 +51,13 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  transition: background 0.77s;
+  /* transition: background 0.77s;
   -webkit-transition: background 0.77s;
   -moz-transition: background 0.77s;
   -ms-transition: background 0.77s;
-  -o-transition: background 0.77s;
+  -o-transition: background 0.77s; */
 }
-html {
+body {
   font-family: "Roboto", sans-serif;
 }
 :before {
@@ -154,7 +134,7 @@ button:focus {
   font for clock
 =========== */
 
-.clock-font{
+.clock-font {
   font-family: "Black Ops One", system-ui;
   font-weight: 500;
 }

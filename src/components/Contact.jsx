@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdOutlineMailOutline } from "react-icons/md";
 import SectionTitle from "./SectionTitle";
 import Lottie from "lottie-react";
@@ -29,7 +29,7 @@ const Contact = () => {
     };
     setSendingMessage(true);
     emailjs
-      .send("service_brxqlrv", "template_pqi434c", obj, "nP8P_3HBV4XJHFIq1")
+      .send("service_y78p415", "template_pqi434c", obj, "nP8P_3HBV4XJHFIq1")
       .then(
         (result) => {
           setSendingMessage(false);
@@ -61,8 +61,8 @@ const Contact = () => {
           <MdOutlineMailOutline /> contact us
         </SectionTitle>
         <p className="text-font-sub-color capitalize">
-        Let's connect and explore opportunities to collaborate on
-        exciting projects
+          Let's connect and explore opportunities to collaborate on exciting
+          projects
         </p>
       </div>
       {/* ==============
@@ -76,11 +76,14 @@ const Contact = () => {
           >
             {/* name input */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <label className="text-font-sub-color w-28">Your Name:</label>
+              <label htmlFor="name" className="text-font-sub-color w-28">
+                Your Name:
+              </label>
               <input
                 type="text"
                 required
                 name="from_name"
+                id="name"
                 value={messageData.from_name}
                 onChange={handleInputChange}
                 className="border border-border-color w-full sm:w-60 bg-bg-nav focus:border-hover-color px-4 py-1 rounded-md"
@@ -88,10 +91,13 @@ const Contact = () => {
             </div>
             {/* email input */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <label className="text-font-sub-color w-28">Your Email:</label>
+              <label htmlFor="email" className="text-font-sub-color w-28">
+                Your Email:
+              </label>
               <input
                 type="email"
                 required
+                id="email"
                 name="from_email"
                 value={messageData.from_email}
                 onChange={handleInputChange}
@@ -100,10 +106,13 @@ const Contact = () => {
             </div>
             {/* message input */}
             <div className="flex flex-col self-stretch sm:flex-row items-start sm:items-center gap-4">
-              <label className="text-font-sub-color w-28">Your Message:</label>
+              <label htmlFor="message" className="text-font-sub-color w-28">
+                Your Message:
+              </label>
               <textarea
                 required
                 name="message"
+                id="message"
                 value={messageData.message}
                 onChange={handleInputChange}
                 className="border tracking-wider border-border-color min-h-44 max-h-96 w-full sm:w-8/12 bg-bg-nav 
@@ -112,9 +121,9 @@ const Contact = () => {
             </div>
             {/* submit button */}
             <div className="flex min-w-32 md:items-center flex-col md:flex-row gap-4">
-              <MainBtn>
-                send
-              </MainBtn>
+              <div className="w-32">
+                <MainBtn>send</MainBtn>
+              </div>
               {/* =============
               sending message 👇
               ================= */}

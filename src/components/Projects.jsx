@@ -1,5 +1,4 @@
 import { ProjectCard } from "./index";
-// import { FaReply, FaCampground } from "react-icons/fa6";
 import SectionTitle from "./SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, Keyboard } from "swiper/modules";
@@ -9,7 +8,7 @@ import "swiper/css/pagination";
 import { useMainContext } from "../context/MainContext";
 
 const projects = () => {
-  const { projectsData, loading } = useMainContext();
+  const { projectsData } = useMainContext();
 
   // swiper responsive display
   const breakpoints = {
@@ -26,19 +25,6 @@ const projects = () => {
       spaceBetween: 30,
     },
   };
-  // ==========
-  // loading 👇
-  //===========
-  if (loading) {
-    return (
-      <>
-        <SectionTitle>my projects</SectionTitle>
-        <div id="projects" className="flex justify-center py-20">
-          <div className="loader" />
-        </div>
-      </>
-    );
-  }
   //===========
   // content
   //===========
@@ -54,11 +40,9 @@ const projects = () => {
             delay: 1500,
             disableOnInteraction: true,
           }}
-          pagination={
-            {
-              type: "fraction",
-            }
-          }
+          pagination={{
+            type: "fraction",
+          }}
           navigation={true}
           modules={[Autoplay, Pagination, Navigation, Keyboard]}
           loop={true}
