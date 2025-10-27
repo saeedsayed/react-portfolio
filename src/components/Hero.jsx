@@ -1,5 +1,5 @@
 import { MdVerified } from "react-icons/md";
-import frontTech from "../assets/animation/front-tech.json";
+import lottieFile from "../assets/animation/code.json";
 import SocialNav from "./SocialNav";
 import Lottie from "lottie-react";
 import { useMainContext } from "../context/MainContext";
@@ -39,7 +39,7 @@ const Hero = () => {
         right section 👇
         ============ */}
       <div className="flex-1">
-        <Lottie animationData={frontTech} />
+        <Lottie animationData={lottieFile} />
       </div>
     </div>
   );
